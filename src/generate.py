@@ -127,10 +127,15 @@ def generate_lesson(topic: str, level: str, game_world: str) -> dict:
     print(f"  Game world: {game_world}")
     response = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=4000,
+        max_tokens=8000,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": build_user_prompt(topic, level, game_world)}]
     )
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            "Claude response was cut off mid-generation (hit max_tokens). "
+            "Bump max_tokens in generate.py and retry."
+        )
     raw = response.content[0].text.strip()
     raw = re.sub(r"^```json\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)

@@ -1,0 +1,89 @@
+{
+  "topic": "data types",
+  "level": "beginner",
+  "game_world": "a fantasy RPG (think Zelda or Stardew Valley)",
+  "title": "Data Types: Your RPG Hero Sheet Comes to Life",
+  "tagline": "Forge your fantasy hero from scratch \u2014 every stat, every item, every name \u2014 and watch your RPG character sheet light up the terminal!",
+  "scratch_bridge": "In Scratch, you used variables to store things like a score or a player's name, and Scratch automatically figured out whether it was a number or words for you. In Python, YOU get to choose the type of data you store \u2014 which gives you way more power, like the difference between a wooden sword and a legendary enchanted blade.",
+  "concept": {
+    "plain_english": "Every piece of information in your game has a TYPE \u2014 think of it like the category on your RPG character sheet. Your hero's name is TEXT (called a string), their health points are a WHOLE NUMBER (called an integer), their speed multiplier might be a DECIMAL NUMBER (called a float), and whether they have a shield equipped is TRUE or FALSE (called a boolean). Python needs to know what TYPE of data it is so it knows what to do with it \u2014 you can't add a name to a number, just like you can't add your hero's name to their HP stat! Each type unlocks different powers: you can do math with numbers, combine text, and make yes/no decisions with booleans.",
+    "why_it_matters": "Once you understand data types, you can build a real character creation screen where players type their hero's name, choose their class, and see a fully formatted stats sheet printed to the screen.",
+    "analogy": "Data types are like the different slots on an RPG character sheet \u2014 the Name slot only accepts text, the HP slot only accepts a number, the Shield Equipped slot only accepts Yes or No, and the Attack Multiplier slot accepts decimals. Each slot has rules about what goes in it!"
+  },
+  "code_example": {
+    "title": "hero_sheet.py",
+    "code": "# === HERO CHARACTER SHEET ===\nhero_name = \"Aelindra\"          # string: text in quotes\nhero_level = 5                   # integer: whole number\nhero_hp = 100                    # integer: whole number\nhero_attack_multiplier = 1.75    # float: decimal number\nhero_has_shield = True           # boolean: True or False\n\nprint(\"\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\")\nprint(\"\u2551    \u2694\ufe0f  HERO CHARACTER SHEET  \u2694\ufe0f   \u2551\")\nprint(\"\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\")\nprint(f\"\u2551  Name   : {hero_name:<17}\u2551\")\nprint(f\"\u2551  Level  : {hero_level:<17}\u2551\")\nprint(f\"\u2551  HP     : {hero_hp:<17}\u2551\")\nprint(f\"\u2551  Atk x  : {hero_attack_multiplier:<17}\u2551\")\nprint(f\"\u2551  Shield : {str(hero_has_shield):<17}\u2551\")\nprint(\"\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\")",
+    "explanation": "Line 1 is just a comment \u2014 your notes to yourself, like sticky notes on your code. Line 2: hero_name is a STRING \u2014 any time data is wrapped in quotes, it's a string, which is Python's word for text. In Scratch, this is like setting a variable to 'Aelindra' using a Set block. Line 3: hero_level is an INTEGER \u2014 a plain whole number, no quotes, no decimal. Line 4: hero_hp is another integer. Line 5: hero_attack_multiplier is a FLOAT \u2014 that just means a number with a decimal point, like 1.75x attack power. Line 6: hero_has_shield is a BOOLEAN \u2014 it's either True or False, exactly like a Scratch boolean (the pointy diamond-shaped blocks!). Lines 8-16 are the magic \u2014 we're printing a fancy box using special characters, and f-strings (the f before the quote) let us plug our variables right into the text, like how Scratch lets you join words and variables together. The :<17 part just makes everything line up neatly in the box. BOOM \u2014 you just printed a real RPG character sheet!",
+    "sample_output": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551    \u2694\ufe0f  HERO CHARACTER SHEET  \u2694\ufe0f   \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  Name   : Aelindra        \u2551\n\u2551  Level  : 5               \u2551\n\u2551  HP     : 100             \u2551\n\u2551  Atk x  : 1.75            \u2551\n\u2551  Shield : True            \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+  },
+  "exercises": [
+    {
+      "number": 1,
+      "difficulty": "easy",
+      "game_context": "You are building the tavern welcome screen that greets a new adventurer when they start the game.",
+      "title": "The Tavern Welcome Board",
+      "instructions": "Step 1 \u2014 Create four variables for a brand new hero: their name (a string, your choice!), their starting gold (an integer, try 50), whether they are a member of the Adventurers Guild (a boolean, True or False), and their luck stat as a decimal like 0.85. Step 2 \u2014 Print a tavern-style welcome sign using those variables. The sign should show all four pieces of info inside a border made of characters like = or * or +. Step 3 \u2014 Make sure each data type appears at least once so the tavern board shows a name, a number, a decimal, and a True/False value. Your output should look like a real in-game notice board nailed to the tavern wall!",
+      "expected_output": "+================================+\n|   \ud83c\udf7a WELCOME TO THE RUSTY AXE  |\n|================================|\n|  Adventurer : Borin Ironboot   |\n|  Gold       : 50               |\n|  Guild Mbr  : True             |\n|  Luck Stat  : 0.85             |\n+================================+",
+      "starter_code": "# === TAVERN WELCOME BOARD ===\n# Step 1: Create your hero's starting info\nadventurer_name = \"???\"       # string: put your hero's name here\nstarting_gold = 0             # integer: how much gold do they start with?\nguild_member = False          # boolean: are they in the guild?\nluck_stat = 0.0               # float: their luck as a decimal\n\n# Step 2: Print the welcome board\n# Hint: use print() for each line and f\"...{variable}...\" to plug in your values\nprint(\"+================================+\")\n# YOUR CODE HERE",
+      "hint": "Remember: strings need quotes around them like 'Borin Ironboot', integers are just plain numbers like 50, floats have a decimal point like 0.85, and booleans are exactly True or False with a capital letter. To plug a variable into your print, use f\"Hello {variable_name} !\" \u2014 that's called an f-string and it's like Scratch's join block!",
+      "scratch_equivalent": "In Scratch, this is like using a Set [variable] to [value] block for each stat, then using Say blocks with join to display them all together on screen."
+    },
+    {
+      "number": 2,
+      "difficulty": "medium",
+      "game_context": "You are building the pre-battle stats comparison screen that appears right before your hero fights a dungeon boss.",
+      "title": "Boss Battle Stats Showdown",
+      "instructions": "Step 1 \u2014 Create variables for YOUR HERO: name (string), hp (integer), attack (integer), is_poisoned (boolean, set to False). Step 2 \u2014 Create variables for THE BOSS: name (string, something scary!), hp (integer, make it bigger than yours!), attack (integer), is_enraged (boolean, set to True). Step 3 \u2014 Print a side-by-side battle screen with both sets of stats inside a cool border. Step 4 \u2014 Below the stats, use an if statement to print a warning line: if the boss hp is greater than your hp, print a warning message like DANGER: Boss outmatches you! otherwise print ADVANTAGE: You have more HP! Step 5 \u2014 At the bottom, calculate and print total_power for your hero as attack multiplied by 10, to show what damage they could deal. Make sure your output looks like a real RPG battle intro screen!",
+      "expected_output": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551        \u2694\ufe0f  BATTLE BEGINS! \u2694\ufe0f        \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2566\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  YOUR HERO   \u2551     BOSS            \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u256c\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  Lyra Swift  \u2551  Gormath the Vile   \u2551\n\u2551  HP : 80     \u2551  HP : 150           \u2551\n\u2551  ATK: 25     \u2551  ATK: 40            \u2551\n\u2551  Poisoned:   \u2551  Enraged:           \u2551\n\u2551  False       \u2551  True               \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2569\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n\u26a0\ufe0f  DANGER: Boss outmatches you!\n\ud83d\udca5 Your total power output: 250",
+      "starter_code": "# === BOSS BATTLE STATS SCREEN ===\n\n# YOUR HERO \u2014 fill these in!\nhero_name = \"Lyra Swift\"     # string\nhero_hp = 80                  # integer\nhero_attack = 25              # integer\nhero_is_poisoned = False      # boolean\n\n# THE BOSS \u2014 make them scary!\nboss_name = \"???\"             # string: give the boss a name\nboss_hp = 0                   # integer: make this bigger than hero_hp!\nboss_attack = 0               # integer\nboss_is_enraged = True        # boolean\n\n# Step 3: Print the battle screen\nprint(\"\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\")\n# YOUR CODE HERE \u2014 add more print lines for the full screen\n\n# Step 4: HP comparison \u2014 use an if statement!\n# if boss_hp > hero_hp:\n#     print(\"...\")\n# else:\n#     print(\"...\")\n\n# Step 5: Calculate total power (integer math!)\ntotal_power = hero_attack * 10\n# print it out!",
+      "hint": "For the side-by-side layout, each print line handles one row of the table \u2014 just put both heroes info in the same print statement separated by the border character. Remember that multiplying two integers gives you another integer, which is perfect for the power calculation. The if statement works exactly like Scratch's if-then-else block \u2014 if the condition is True, it runs the first chunk, otherwise the second!",
+      "scratch_equivalent": "In Scratch, this is like using multiple Set variable blocks to build up all your stats, then using if-then-else blocks with the green operator blocks (like greater than >) to compare them, and Say blocks to display the result."
+    }
+  ],
+  "quiz": [
+    {
+      "number": 1,
+      "question": "Your hero picks up a magical sword named 'Dawnblade'. You want to store the sword's name in Python. Which data type do you use?",
+      "options": [
+        "A) integer \u2014 because it's a whole thing",
+        "B) string \u2014 because it's text, wrapped in quotes",
+        "C) boolean \u2014 because the hero either has it or doesn't",
+        "D) float \u2014 because swords have weight"
+      ],
+      "answer": "B",
+      "explanation": "A string is the data type for any text \u2014 words, names, sentences. Whenever you're storing something you would type out in letters, like a sword name or a hero's title, you wrap it in quotes and Python knows it's a string. The sword's NAME is text, so string is the perfect slot on the character sheet for it!"
+    },
+    {
+      "number": 2,
+      "question": "Your hero's health is at 73 HP. Later it drops by half to 36.5 HP. Which data types would you use for these two HP values?",
+      "options": [
+        "A) Both are strings because HP is displayed on screen",
+        "B) 73 is an integer, and 36.5 is a float because it now has a decimal",
+        "C) Both are booleans because health is either full or empty",
+        "D) Both are floats because numbers are always floats in games"
+      ],
+      "answer": "B",
+      "explanation": "73 is a whole number with no decimal, so it's an integer \u2014 think of it as a clean whole HP bar. But 36.5 has a decimal point, which makes it a float. In many RPGs you keep HP as integers, but some games (like ones with percentage-based damage) need floats for precise damage calculations. Knowing the difference lets you choose the right tool!"
+    },
+    {
+      "number": 3,
+      "question": "You're coding a checkpoint system. The player either HAS reached the dungeon checkpoint or they HAVEN'T. What is the perfect data type to store this?",
+      "options": [
+        "A) string \u2014 store it as 'yes' or 'no' in quotes",
+        "B) integer \u2014 use 1 for yes and 0 for no",
+        "C) boolean \u2014 store it as True or False",
+        "D) float \u2014 use 1.0 for reached and 0.0 for not reached"
+      ],
+      "answer": "C",
+      "explanation": "Boolean is MADE for exactly this \u2014 any time something in your game is a yes/no, on/off, or has/doesn't have situation, boolean is your best friend. checkpoint_reached = True is clean, readable, and tells Python to treat it as a true/false decision. You might have seen this in Scratch as the pointy diamond-shaped blocks that only hold true or false \u2014 same idea in Python!"
+    }
+  ],
+  "challenge": {
+    "title": "RPG Character Creation Screen",
+    "game_context": "You are building the character creation screen that every player sees when they boot up your fantasy RPG for the first time.",
+    "description": "Using everything from this lesson, build a full character creation display. Create at least 6 variables covering ALL FOUR data types (string, integer, float, boolean). Include: the hero's name and class (strings), their starting HP and gold (integers), their critical hit chance as a percentage decimal like 0.15 (float), and two boolean flags like has_magic and is_veteran. Then print a gorgeous multi-section character sheet with: a header banner, a stats section with a visual HP bar made of block characters, an equipment section, a traits section showing the booleans, and a footer showing their calculated power rating (hp multiplied by critical hit chance, rounded to 1 decimal). Make it look like something you'd actually see in a real RPG \u2014 go wild with the border characters!",
+    "example_output": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551  \u2728  FANTASY RPG \u2014 NEW HERO CREATED  \u2728  \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n\n  CLASS: Shadow Ranger\n  NAME : Zephyr Nightwalker\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 STATS \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  HP   : 120  [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591] 120/200\n  GOLD : 75g\n  CRIT : 15.0%\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 TRAITS \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  \ud83d\udd2e Has Magic  : True\n  \ud83c\udfc6 Veteran    : False\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 POWER \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  \u26a1 Power Rating : 18.0\n  \u2605 Status: READY FOR ADVENTURE!\n\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551     Good luck out there, hero...     \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+  },
+  "encouragement": "You just coded real data types \u2014 the exact same building blocks that the developers of Stardew Valley used to track every crop timer, every villager's friendship level, and every item in your backpack. With strings, integers, floats, and booleans in your toolkit, you have everything you need to start building your own RPG inventory system, a battle engine, or even a full character creator \u2014 the dungeon is yours to conquer!",
+  "generated_at": "2026-05-20T18:14:10.643217"
+}
