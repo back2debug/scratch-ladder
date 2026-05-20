@@ -1,0 +1,90 @@
+{
+  "topic": "variables",
+  "level": "beginner",
+  "game_world": "a dungeon crawler RPG (think Minecraft Dungeons)",
+  "title": "Level Up: Variables are Your Player Stats",
+  "tagline": "Time to code your first dungeon hero with health bars, damage counters, and epic loot stats!",
+  "duration_minutes": 30,
+  "scratch_bridge": "Remember how you used those orange 'Data' blocks in Scratch to track your sprite's score or lives? Variables in Python do exactly the same job - they're storage boxes for your game data! Instead of dragging a 'set score to 0' block, you'll type player_health = 100.",
+  "concept": {
+    "plain_english": "Variables are like containers that hold information your game needs to remember - think player health, damage dealt, gold collected, or level number. Just like how your character sheet in an RPG tracks your stats, variables track all the numbers and text that make your game work. You can change what's inside a variable anytime (like losing health in battle), and you can use that stored info anywhere in your code (like displaying your health bar).",
+    "why_it_matters": "Without variables, your game characters couldn't have health, take damage, level up, or even have names!",
+    "analogy": "A variable is like a stat on your character sheet - it has a name (like 'Health') and a value (like 100), and that value can go up or down as you play."
+  },
+  "code_example": {
+    "title": "hero_stats.py",
+    "code": "# Creating our dungeon hero!\nplayer_name = \"Sir Codesworth\"\nplayer_health = 100\nplayer_attack = 25\ngold_coins = 0\n\n# Display the hero's stats with ASCII art\nprint(\"=\" * 30)\nprint(\"    DUNGEON HERO CREATED!\")\nprint(\"=\" * 30)\nprint(f\"Name: {player_name}\")\nprint(f\"Health: [{'\u2588' * (player_health//10)}] {player_health}/100\")\nprint(f\"Attack: \u2694\ufe0f  {player_attack}\")\nprint(f\"Gold: \ud83d\udcb0 {gold_coins}\")\nprint(\"=\" * 30)",
+    "explanation": "We just created our first dungeon hero! Line 2 stores the hero's name in a text variable (in Scratch, this was like the 'set name to Sir Codesworth' block). Lines 3-5 store numbers for health, attack power, and gold - just like 'set health to 100' blocks. The print statements show off our hero with a cool health bar made of block characters (\u2588). The f-strings with {curly braces} let us insert our variable values right into the text - way cooler than Scratch's 'join' blocks!",
+    "sample_output": "==============================\n    DUNGEON HERO CREATED!\n==============================\nName: Sir Codesworth\nHealth: [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588] 100/100\nAttack: \u2694\ufe0f  25\nGold: \ud83d\udcb0 0\n=============================="
+  },
+  "exercises": [
+    {
+      "number": 1,
+      "difficulty": "easy",
+      "game_context": "You're setting up a new player character for the dungeon crawler.",
+      "title": "Create Your Dungeon Hero",
+      "instructions": "Time to make your own hero! Create variables for your character's name, starting health (pick any number), and starting weapon damage. Then print out a character sheet showing these stats. Make it look epic with some ASCII decorations like stars (*) or equal signs (=).",
+      "expected_output": "****************\n  HERO CREATED  \n****************\nName: [your chosen name]\nHealth: [your chosen number]\nDamage: [your chosen number]\n****************",
+      "starter_code": "# Create your dungeon hero here!\nhero_name = \nstarting_health = \nweapon_damage = \n\n# Print your hero's stats\nprint(\"****************\")\nprint(\"  HERO CREATED  \")\nprint(\"****************\")",
+      "hint": "Remember to put quotes around text values but not around numbers - just like in Scratch where text sprites needed quotes but number variables didn't!",
+      "scratch_equivalent": "This is like using 'set my variable to' blocks to store your sprite's starting values."
+    },
+    {
+      "number": 2,
+      "difficulty": "medium",
+      "game_context": "Your hero just found treasure and needs to update their inventory.",
+      "title": "Loot Collection System",
+      "instructions": "Your hero found some treasure! Start with gold_coins = 50, then your hero finds a treasure chest with 75 more coins. Update your gold amount and create a cool treasure report. Show the old amount, new amount, and a celebration message with ASCII art.",
+      "expected_output": "\ud83d\udcb0 TREASURE FOUND! \ud83d\udcb0\n==================\nGold before: 50\nGold found: +75\n------------------\nTotal gold: 125\n\ud83c\udf89 LEVEL UP YOUR WALLET! \ud83c\udf89",
+      "starter_code": "# Starting gold\ngold_coins = 50\ntreasure_found = 75\n\n# Update gold total here\n\n# Create treasure report\nprint(\"\ud83d\udcb0 TREASURE FOUND! \ud83d\udcb0\")",
+      "hint": "Use gold_coins = gold_coins + treasure_found to update your total - just like 'change gold by 75' in Scratch!",
+      "scratch_equivalent": "This is like using 'change my variable by' blocks to add to your sprite's score or coins."
+    }
+  ],
+  "quiz": [
+    {
+      "number": 1,
+      "question": "Your dungeon hero has 85 health points. To store this in your game, you would write:",
+      "options": [
+        "A) player_health = 85",
+        "B) 85 = player_health",
+        "C) player_health == 85",
+        "D) set player_health = 85"
+      ],
+      "answer": "A",
+      "explanation": "Just like Scratch's 'set health to 85' block, we write the variable name first, then equals, then the value!"
+    },
+    {
+      "number": 2,
+      "question": "Which variable name follows good game coding style for tracking your hero's magic points?",
+      "options": [
+        "A) mp",
+        "B) magic_points",
+        "C) MagicPoints",
+        "D) MAGIC POINTS"
+      ],
+      "answer": "B",
+      "explanation": "Use descriptive names with underscores between words - it's like naming your Scratch variables clearly so you remember what they do!"
+    },
+    {
+      "number": 3,
+      "question": "Your hero starts with 0 gold coins and finds 25 coins. To update the total, you write:",
+      "options": [
+        "A) gold_coins + 25",
+        "B) gold_coins = 25",
+        "C) gold_coins = gold_coins + 25",
+        "D) 25 + gold_coins = gold_coins"
+      ],
+      "answer": "C",
+      "explanation": "This is exactly like Scratch's 'change gold_coins by 25' - you take the current value, add to it, and store the result back in the same variable!"
+    }
+  ],
+  "challenge": {
+    "title": "Epic Hero Character Creator",
+    "game_context": "Build a complete character creation system for your dungeon crawler RPG.",
+    "description": "Create the ultimate hero setup system! Your code should create a hero with name, class (like 'Warrior' or 'Mage'), health, attack, defense, and starting gold. Then simulate finding a magic item that boosts one of their stats. Display everything with epic ASCII art including a visual health bar, stat comparison (before/after the magic item), and a victory celebration. Make it feel like a real RPG character screen!",
+    "example_output": "\ud83c\udff0 DUNGEON HERO CREATED \ud83c\udff0\n===========================\nHero: Lightning Bolt Lucy\nClass: Storm Mage \u26a1\nHealth: [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588] 100/100\nAttack: \u2694\ufe0f  35 \u2192 50 (+15!)\nDefense: \ud83d\udee1\ufe0f  20\nGold: \ud83d\udcb0 150\n===========================\n\u2728 FOUND: Thunder Staff! \u2728\n\ud83c\udf89 READY FOR ADVENTURE! \ud83c\udf89\n==========================="
+  },
+  "encouragement": "You just mastered the foundation of ALL games! With variables, you could start building Pokemon (HP, stats), Minecraft (block counts, coordinates), or even Fortnite (health, ammo, materials). Every epic game started with someone storing their first player_health = 100. You're officially a real game programmer now! \ud83c\udfae",
+  "generated_at": "2026-05-17T11:53:26.087610"
+}
