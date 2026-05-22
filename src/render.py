@@ -91,17 +91,17 @@ def render_lesson_html(lesson: dict) -> str:
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {{
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #22263a;
-      --accent: #7c6af7;
-      --accent2: #f7c66a;
-      --green: #5dde8e;
-      --red: #f76a6a;
-      --yellow: #f7c66a;
-      --text: #e8eaf6;
-      --muted: #8b90b0;
-      --border: rgba(124,106,247,0.2);
+      --bg: #3a3d50;
+      --surface: #474a5f;
+      --surface2: #555870;
+      --accent: #b8acff;
+      --accent2: #ffd9a3;
+      --green: #a3f0c0;
+      --red: #ffb3b3;
+      --yellow: #ffd9a3;
+      --text: #ffffff;
+      --muted: #c8ccdd;
+      --border: rgba(184,172,255,0.3);
       --radius: 12px;
     }}
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -113,7 +113,7 @@ def render_lesson_html(lesson: dict) -> str:
       min-height: 100vh;
     }}
     .hero {{
-      background: linear-gradient(135deg, #1a1d27 0%, #12102a 100%);
+      background: linear-gradient(135deg, #474a5f 0%, #443e6a 100%);
       border-bottom: 1px solid var(--border);
       padding: 3rem 2rem 2.5rem;
       text-align: center;
@@ -126,7 +126,7 @@ def render_lesson_html(lesson: dict) -> str:
       top: -60px; left: 50%;
       transform: translateX(-50%);
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(124,106,247,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(184,172,255,0.25) 0%, transparent 70%);
       pointer-events: none;
     }}
     .hero h1 {{
@@ -200,7 +200,7 @@ def render_lesson_html(lesson: dict) -> str:
     .scratch-bridge-label {{ color: #5dde8e; font-weight: 700; font-size: 0.8rem; display: block; margin-bottom: 4px; }}
     .sample-output-box {{ margin-top: 0.75rem; }}
     .code-card {{
-      background: #0d0f1a;
+      background: #2e3142;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
@@ -266,9 +266,9 @@ def render_lesson_html(lesson: dict) -> str:
     .scratch-tag {{ font-size: 0.78rem; color: #5dde8e; background: rgba(93,222,142,0.08); border: 1px dashed rgba(93,222,142,0.25); border-radius: 6px; padding: 4px 10px; margin-bottom: 0.75rem; }}
     .expected-output-box {{ margin: 0.75rem 0; }}
     .expected-label {{ font-size: 0.75rem; color: var(--accent); font-weight: 700; margin-bottom: 4px; }}
-    .expected-output {{ background: #0a1a0f; border: 1px solid rgba(93,222,142,0.25); border-radius: 8px; padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.78rem; color: #5dde8e; margin: 0; }}
+    .expected-output {{ background: #2e3d35; border: 1px solid rgba(163,240,192,0.35); border-radius: 8px; padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.78rem; color: #a3f0c0; margin: 0; }}
     .starter-code {{
-      background: #0d0f1a;
+      background: #2e3142;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 0.75rem 1rem;
@@ -353,7 +353,7 @@ def render_lesson_html(lesson: dict) -> str:
     .challenge-card h3 {{ font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--accent2); }}
     .challenge-card .challenge-desc {{ color: var(--muted); font-size: 0.92rem; margin-bottom: 0.75rem; }}
     .expected-output {{
-      background: #0d0f1a;
+      background: #2e3142;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 0.75rem 1rem;
@@ -433,7 +433,7 @@ def render_lesson_html(lesson: dict) -> str:
         {quiz_html}
       </div>
       <div class="quiz-score" id="quiz-score">
-        <div class="score-number" id="score-display">0/5</div>
+        <div class="score-number" id="score-display">0/{len(lesson.get("quiz", []))}</div>
         <p style="color: var(--muted); margin-top: 0.5rem;" id="score-message"></p>
       </div>
     </div>
@@ -512,16 +512,16 @@ def render_index_html(lessons: list) -> str:
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {{
-      --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
-      --accent: #7c6af7; --accent2: #f7c66a;
-      --text: #e8eaf6; --muted: #8b90b0;
-      --border: rgba(124,106,247,0.2); --radius: 12px;
+      --bg: #3a3d50; --surface: #474a5f; --surface2: #555870;
+      --accent: #b8acff; --accent2: #ffd9a3;
+      --text: #ffffff; --muted: #c8ccdd;
+      --border: rgba(184,172,255,0.3); --radius: 12px;
     }}
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
     body {{ font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }}
     .hero {{
       text-align: center; padding: 4rem 2rem 3rem;
-      background: linear-gradient(135deg, #1a1d27 0%, #12102a 100%);
+      background: linear-gradient(135deg, #474a5f 0%, #443e6a 100%);
       border-bottom: 1px solid var(--border);
     }}
     .hero h1 {{ font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 0.75rem; }}
